@@ -4,6 +4,10 @@ class WorkerStrikeException(Exception):
     pass
 
 class Worker(object):
+    """
+    A Worker will work a full 40 hour week and then go on strike. Each time
+    a Worker works, they work a random amount of time between 1 and 40.
+    """
     def __init__(self):
         self.hours_worked = 0
 
@@ -16,6 +20,10 @@ class Worker(object):
         return timesheet
 
 class Boss(object):
+    """
+    A Boss makes profit using workers. Bosses squeeze 1000 monies out of a
+    Worker for each hour worked. Workers on strike are instantly replaced.
+    """
     def __init__(self, worker):
         self.worker = worker
         self.profit = 0
